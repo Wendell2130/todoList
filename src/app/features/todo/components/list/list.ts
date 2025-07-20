@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from '../../../../interfaces/task';
 
 @Component({
@@ -8,5 +8,16 @@ import { Task } from '../../../../interfaces/task';
   styleUrl: './list.scss'
 })
 export class List {
-@Input() taskList: Task[] = [];
+  @Input() taskList: Task[] = [];
+  @Output() taskDoneToggle = new EventEmitter<number>();
+  @Output() taskDelete = new EventEmitter<number>();
+
+  changeTaskDone(index: number) {
+    this.taskDoneToggle.emit(index);
+
+  }
+  deleteTask(index: number) {
+    this.taskDelete.emit(index);
+   
+  }
 }

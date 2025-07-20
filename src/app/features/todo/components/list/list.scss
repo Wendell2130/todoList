@@ -1,8 +1,6 @@
 :host {
     margin-top: 20px;
     display: block;
-    border: 1px dashed blue;
-
 }
 
 ul {
@@ -20,17 +18,29 @@ ul {
         justify-content: space-between;
         align-items: center;
         position: relative;
-      
+
     }
 
     li:hover {
         background-color: #f1f1f1;
         cursor: pointer
     }
-    input {
-         transform: scale(1.5);   
-         margin-right: 10px;
-          vertical-align: middle; 
-        }
 
+    input {
+        transform: scale(1.5);
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+}
+
+.btn-delete {
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.btn-delete:hover {
+    background-color: #ddd;
+    border-radius: 10px;
+    background-color: rgb(232, 51, 51);
 }

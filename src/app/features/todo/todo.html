@@ -2,8 +2,14 @@
     <div class="info">Total: {{tasks.length}} Done: {{tasksDone.length}}</div>
     <h1 class='title'>Your To Do</h1> 
     <div class="content">
-        <app-set (newTask)="addTask($event)"></app-set>
-        <app-list [taskList]="tasks"></app-list>
+        <app-set (newTask)="addTask($event)">
+
+        </app-set>
+
+        <app-list [taskList]="tasks" 
+        (taskDoneToggle)="taskDone($event)"
+        (taskDelete)="deleteTask($event)">
+        </app-list>
 
     </div>
 </div>
