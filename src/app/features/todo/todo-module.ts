@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Todo } from './todo';
 import { List } from './components/list/list';
 import { Set } from './components/set/set';
-
+import { ReactiveFormsModule } from '@angular/forms'; 
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { Set } from './components/set/set';
     Set
   ],
   imports: [
-    CommonModule
+    CommonModule,ReactiveFormsModule 
   ],
   exports:[Todo]
 })

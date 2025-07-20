@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-set',
@@ -7,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './set.scss'
 })
 export class Set {
-
+  newTaskInput = new FormControl('');
+  @Output() newTask=new EventEmitter<string>();
+  
+  sendTask() {
+    const task = this.newTaskInput.value;
+    if (task) {
+      this.newTask.emit(task);
+      this.newTaskInput.setValue('');
+    }else{
+      alert('Please enter a task');
+    }
+  }
 }

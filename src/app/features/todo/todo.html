@@ -1,8 +1,8 @@
 <div class="container">
-    
-    <h1 class='title'>To do List</h1>
+    <div class="info">Total: {{tasks.length}} Done: {{tasksDone.length}}</div>
+    <h1 class='title'>Your To Do</h1> 
     <div class="content">
-        <app-set ></app-set>
+        <app-set (newTask)="addTask($event)"></app-set>
         <app-list [taskList]="tasks"></app-list>
 
     </div>

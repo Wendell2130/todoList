@@ -13,4 +13,11 @@ const MOCK=Array.from({length:5},(_,i)=>({
 })
 export class Todo {
  tasks:Task[]=MOCK;
+ tasksDone:Task[]=this.tasks.filter(task => task.done);
+ addTask(task: string) {
+    alert(`Task added: ${task}`);
+    if (task) {
+      this.tasks.push({ task, done: false });
+    }
+  }
 }
