@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-interface Task{
-  task:string,
-  did:boolean
-}
-const MOCK=Array.from({length:2},(_,i)=>({
-  task:`Task_${i+1}`,did:true
+import { Task } from '../../interfaces/task';
+
+const MOCK=Array.from({length:5},(_,i)=>({
+  task:`Task_${i+1}`,done:false
 }));
+
 @Component({
   selector: 'app-todo',
   standalone: false,

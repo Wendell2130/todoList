@@ -1,1 +1,11 @@
-<p>list works!</p>
+
+<div class="container">
+  <ul>
+    <li *ngFor="let task of taskList">
+       
+        <span> <input type="checkbox"> {{task.task}}</span>
+        <span>{{task.done ? 'Done' : 'Pending'}}</span>
+       
+    </li>
+  </ul>
+</div>
