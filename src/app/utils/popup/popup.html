@@ -1,5 +1,5 @@
 <div class="container" *ngIf="isShowed"[ngClass]="popType" #container>
-    <button class="btn" (click)="hiddenPopup()"> &#10005;</button>
+    <button class="btn" (click)="hiddenPopup()" (keydown.enter)="hiddenPopup()" tabindex="0"> &#10005;</button>
     <div>
         <h2>{{popType | titlecase}}</h2>
          

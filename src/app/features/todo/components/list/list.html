@@ -6,7 +6,7 @@
         <span [class.checked]="task.done"> <input type="checkbox" [checked]="task.done"  >
            {{task.task}}
           </span>
-        <span class="btn-delete" (click)="deleteTask(i)"> &#10005;</span>
+        <span class="btn-delete" (mousedown)="deleteTask(i)"> &#10005;</span>
        
     </li>
   </ul>

@@ -8,16 +8,14 @@ import { PopupType } from '../../interfaces/popuptype';
   styleUrl: './popup.scss'
 })
 export class Popup {
-  @ViewChild('container') container!: ElementRef;
-  constructor(private renderer:Renderer2) { }
-  @Input() popType:PopupType = 'info'; 
+  @Input() popType: PopupType = 'info';
   @Input() message: string = 'default message';
   @Input() isShowed: boolean = false;
- 
- hiddenPopup() {
+
+  hiddenPopup() {
     this.isShowed = false;
-   
+
   }
- 
-  
+
+
 }

@@ -1,7 +1,5 @@
-import { Component, ViewChild, viewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { Task } from '../../interfaces/task';
-
-import { Popup } from '../../utils/popup/popup';
 import { PopupType } from '../../interfaces/popuptype';
 
 const MOCK=Array.from({length:3},(_,i)=>({
@@ -17,10 +15,10 @@ const MOCK=Array.from({length:3},(_,i)=>({
 export class Todo {
  tasks:Task[]=MOCK;
  tasksDone:Task[]=this.tasks.filter(task => task.done);
- @ViewChild('popup') popup!: Popup;
   popUpIsShowed:boolean = false;
   msgPopup: string = '';
   popupType: PopupType = 'info';
+  timeoutId: any;
 
  addTask(task: string) {
   if (task) {
@@ -48,8 +46,12 @@ export class Todo {
     this.msgPopup = msg;
     this.popupType = type; 
      this.popUpIsShowed = true;
-        setTimeout(() => {
+     if(this.timeoutId) {
+        clearTimeout(this.timeoutId);
+      }
+       this.timeoutId=setTimeout(() => {
           this.popUpIsShowed = false;
-      }, 2000);
+          this.timeoutId = null;
+      }, 3000);
   }
 }

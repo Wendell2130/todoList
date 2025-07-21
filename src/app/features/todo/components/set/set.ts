@@ -13,7 +13,7 @@ export class Set {
   
   sendTask() {
     const task = this.newTaskInput.value;
-    if (task) {
+    if (task?.trim()) {
       this.newTask.emit(task);
       this.newTaskInput.setValue('');
     }else{
