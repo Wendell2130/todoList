@@ -1,0 +1,10 @@
+<div class="container" *ngIf="isShowed"[ngClass]="popType" #container>
+    <button class="btn" (click)="hiddenPopup()"> &#10005;</button>
+    <div>
+        <h2>{{popType | titlecase}}</h2>
+         
+    </div>
+    <p>{{message}}</p>
+   
+</div>
+

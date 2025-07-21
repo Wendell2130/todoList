@@ -17,7 +17,8 @@ export class Set {
       this.newTask.emit(task);
       this.newTaskInput.setValue('');
     }else{
-      alert('Please enter a task');
+      this.newTask.emit('');
+     
     }
   }
 }
