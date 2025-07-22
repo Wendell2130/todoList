@@ -1,7 +1,7 @@
-  <app-popup [isShowed]="popUpIsShowed" [message]="msgPopup" [popType]="popupType" (closePopup)="popUpIsShowed = false">
+  <app-popup [(isShowed)]="popUpIsShowed" [message]="msgPopup" [popType]="popupType" >
     <ng-container *ngIf="popUpIsShowed">
         <div class="popup-content">
-            <h2>{{popupType | titlecase}}</h2>
+            <h3>{{popupType | titlecase}}</h3>
             <p>{{msgPopup}}</p>
         </div>
     </ng-container>

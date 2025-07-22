@@ -18,6 +18,9 @@ export class List {
   }
   deleteTask(index: number) {
     this.taskDelete.emit(index);
-   
+
+  }
+  trackByTask(index: number, item: Task): string {
+    return item.task; 
   }
 }

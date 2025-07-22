@@ -10,11 +10,13 @@ import { PopupType } from '../../interfaces/popuptype';
 export class Popup {
   @Input() popType: PopupType = 'info';
   @Input() message: string = 'default message';
-  @Input() isShowed: boolean = false;
-  @Output() closePopup = new EventEmitter<void>();
+  @Input() isShowed: boolean = false; //isShowed e isShowedChange criam um two-way binding
+  @Output() isShowedChange = new EventEmitter<boolean>();
  
-  hiddenPopup() {
-    this.closePopup.emit();
+  hiddenPopup() { //dá o controle de visibilidade ao elemento pai
+    this.isShowed = false;
+    this.isShowedChange.emit(this.isShowed);
+    
   }
 
 
