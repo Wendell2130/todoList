@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChild } from '@angular/core';
 import { PopupType } from '../../interfaces/popuptype';
 
 @Component({
@@ -11,10 +11,10 @@ export class Popup {
   @Input() popType: PopupType = 'info';
   @Input() message: string = 'default message';
   @Input() isShowed: boolean = false;
-
+  @Output() closePopup = new EventEmitter<void>();
+ 
   hiddenPopup() {
-    this.isShowed = false;
-
+    this.closePopup.emit();
   }
 
 
